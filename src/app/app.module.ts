@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,10 +12,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AltaRepartidorComponent } from './components/alta-repartidor/alta-repartidor.component';
 import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
 
-
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { DetalleRepartidorComponent } from './components/detalle-repartidor/detalle-repartidor.component';
+import { TablaDetalleRepartidorComponent } from './components/tabla-detalle-repartidor/tabla-detalle-repartidor.component';
+import { DetalleRepartidorSeleccionadoComponent } from './components/detalle-repartidor-seleccionado/detalle-repartidor-seleccionado.component';
+import { DetallePaisRepartidorComponent } from './components/detalle-pais-repartidor/detalle-pais-repartidor.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     BienvenidoComponent,
     LoginComponent,
     AltaRepartidorComponent,
-    TablaPaisesComponent
+    TablaPaisesComponent,
+    DetalleRepartidorComponent,
+    TablaDetalleRepartidorComponent,
+    DetalleRepartidorSeleccionadoComponent,
+    DetallePaisRepartidorComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,11 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    ToastrModule.forRoot({
+      timeOut: 2500,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

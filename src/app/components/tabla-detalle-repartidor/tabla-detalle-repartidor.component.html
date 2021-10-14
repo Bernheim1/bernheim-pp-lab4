@@ -1,0 +1,22 @@
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <th>DNI</th>
+            <th>NOMBRE</th>
+            <th>EDAD</th>
+            <th>CAPACIDAD DE TRANSPORTE</th>
+            <th>PAIS</th>
+            <th>UNIDAD PROPIA</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of repartidoresBD" (click)="this.setOutput(item)">
+        <td>{{item.dni}}</td>
+        <td>{{item.nombre}}</td>
+        <td>{{item.edad}}</td>
+        <td>{{item.capacidadTransporte}}</td>
+        <td>{{item.pais}}</td>
+        <td>{{item.unidadPropia}}</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>

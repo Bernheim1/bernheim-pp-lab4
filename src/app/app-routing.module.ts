@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AltaRepartidorComponent } from './components/alta-repartidor/alta-repartidor.component';
 import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
