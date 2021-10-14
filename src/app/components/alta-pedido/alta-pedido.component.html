@@ -1,0 +1,50 @@
+<form [formGroup]="grupoDeControles" (ngSubmit)="agregarPedido()">
+    <div class="row formulario">
+      <div class="col-md-6 mb-3">
+        <label for="cliente" class="form-label">Cliente</label>
+        <input type="text" class="form-control" id="cliente" placeholder="Ingrese cliente" formControlName="cliente">
+        <small class="text-danger" *ngIf="grupoDeControles.controls.cliente.errors?.required && grupoDeControles.controls.cliente.touched">El cliente es requerido</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="mail" class="form-label">Mail</label>
+        <input type="text" class="form-control" id="mail" placeholder="Ingrese mail" formControlName="mail">
+        <small *ngIf="grupoDeControles.controls.mail.errors?.required && grupoDeControles.controls.mail.touched" class="text-danger">El mail es requerido</small>
+        <small *ngIf="grupoDeControles.controls.mail.errors?.email && grupoDeControles.controls.mail.touched" class="text-danger">El mail es invalido</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="localidad" class="form-label">Localidad</label>
+        <input type="text" class="form-control" id="localidad" placeholder="Ingrese localidad" formControlName="localidad">
+        <small class="text-danger" *ngIf="grupoDeControles.controls.localidad.errors?.required && grupoDeControles.controls.localidad.touched">La localidad es requerida</small>
+        <small class="text-danger" *ngIf="grupoDeControles.controls.localidad.errors?.min || grupoDeControles.controls.localidad.errors?.max && grupoDeControles.controls.localidad.touched">Debe estar entre 18 y 150</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="direccion" class="form-label">Direccion</label>
+        <input type="text" class="form-control" id="direccion" placeholder="Ingrese capacidad de transporte" formControlName="direccion">
+        <small class="text-danger" *ngIf="grupoDeControles.controls.direccion.errors?.required && grupoDeControles.controls.direccion.touched">La capacidad de transporte es requerida</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="descripcion" class="form-label">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" placeholder="Ingrese descripcion" formControlName="descripcion">
+        <small class="text-danger" *ngIf="grupoDeControles.controls.descripcion.errors?.required && grupoDeControles.controls.descripcion.touched">La descripcion es requerida</small>
+        <small class="text-danger" *ngIf="grupoDeControles.controls.descripcion.errors?.maxLength && grupoDeControles.controls.descripcion.touched">La descripcion es demasiado larga</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="precio" placeholder="Ingrese precio" formControlName="precio">
+        <small class="text-danger" *ngIf="grupoDeControles.controls.precio.errors?.required && grupoDeControles.controls.precio.touched">El precio es requerido</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="peso" class="form-label">Peso</label>
+        <input type="number" class="form-control" id="peso" placeholder="Ingrese peso" formControlName="peso">
+        <small class="text-danger" *ngIf="grupoDeControles.controls.peso.errors?.required && grupoDeControles.controls.peso.touched">El peso es requerido</small>
+        <small class="text-danger" *ngIf="grupoDeControles.controls.peso.errors?.min || grupoDeControles.controls.peso.errors?.max && grupoDeControles.controls.peso.touched">Debe estar entre 500 y 1000</small>
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-md-12 d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="grupoDeControles.invalid">
+          Agregar
+        </button>
+      </div>
+    </div>
+  </form>

@@ -16,4 +16,13 @@ export class FirestoreService {
       console.error(err);
     });
   }
+
+  subirPedido(object : any){
+    return this.firestore.collection('pedidos').add(object)
+    .then((respuesta) => {
+      console.log(respuesta);
+    }).catch((err) => {
+      console.error(err);
+    });
+  }
 }

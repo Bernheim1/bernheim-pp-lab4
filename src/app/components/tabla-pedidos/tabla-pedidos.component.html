@@ -1,0 +1,24 @@
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <th>CLIENTE</th>
+            <th>MAIL</th>
+            <th>LOCALIDAD</th>
+            <th>DIRECCION</th>
+            <th>DESCRIPCION</th>
+            <th>PRECIO</th>
+            <th>PESO</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of pedidosBD" (click)="this.setOutput(item)">
+        <td>{{item.cliente}}</td>
+        <td>{{item.mail}}</td>
+        <td>{{item.localidad}}</td>
+        <td>{{item.direccion}}</td>
+        <td>{{item.descripcion}}</td>
+        <td>{{item.precio}}</td>
+        <td>{{item.peso}}</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>

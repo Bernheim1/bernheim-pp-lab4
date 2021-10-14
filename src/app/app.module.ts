@@ -19,6 +19,11 @@ import { DetalleRepartidorComponent } from './components/detalle-repartidor/deta
 import { TablaDetalleRepartidorComponent } from './components/tabla-detalle-repartidor/tabla-detalle-repartidor.component';
 import { DetalleRepartidorSeleccionadoComponent } from './components/detalle-repartidor-seleccionado/detalle-repartidor-seleccionado.component';
 import { DetallePaisRepartidorComponent } from './components/detalle-pais-repartidor/detalle-pais-repartidor.component';
+import { AltaPedidoComponent } from './components/alta-pedido/alta-pedido.component';
+import { ModificarPedidoComponent } from './components/modificar-pedido/modificar-pedido.component';
+import { CambiarEstadoPedidoComponent } from './components/cambiar-estado-pedido/cambiar-estado-pedido.component';
+import { GestionDeliveryComponent } from './components/gestion-delivery/gestion-delivery.component';
+import { TablaPedidosComponent } from './components/tabla-pedidos/tabla-pedidos.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,11 @@ import { DetallePaisRepartidorComponent } from './components/detalle-pais-repart
     TablaDetalleRepartidorComponent,
     DetalleRepartidorSeleccionadoComponent,
     DetallePaisRepartidorComponent,
+    AltaPedidoComponent,
+    ModificarPedidoComponent,
+    CambiarEstadoPedidoComponent,
+    GestionDeliveryComponent,
+    TablaPedidosComponent,
   ],
   imports: [
     BrowserModule,
