@@ -60,7 +60,7 @@
         <h4 class="my-0 font-weight-normal">Modificar pedido</h4>
       </div>
       <div class="card-body">
-        <app-modificar-pedido [pedidoDetalle]="this.pedidoDetalle"></app-modificar-pedido>
+        <app-modificar-pedido *ngIf="this.pedidoDetalle != null" [pedidoDetalle]="this.pedidoDetalle"></app-modificar-pedido>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">

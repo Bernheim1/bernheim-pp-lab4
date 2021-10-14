@@ -25,4 +25,8 @@ export class FirestoreService {
       console.error(err);
     });
   }
+
+  modificarPedido(object : any, id : any){
+    return this.firestore.collection('pedidos').doc(id).update(object);
+  }
 }

@@ -15,7 +15,7 @@ export class TablaPedidosComponent implements OnInit {
 
   constructor(private db : AngularFirestore) { 
     this.coleccion = this.db.collection<any>('pedidos');
-    this.pedidos = this.coleccion.valueChanges();
+    this.pedidos = this.coleccion.valueChanges({idField: 'id'});
   }
 
   ngOnInit(): void {

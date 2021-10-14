@@ -29,17 +29,21 @@ export class ModificarPedidoComponent implements OnInit {
 
     console.log(this.pedidoDetalle)
 
-    this.grupoDeControles.get('cliente')?.setValue(this.pedidoDetalle.cliente);
-    this.grupoDeControles.get('mail')?.setValue(this.pedidoDetalle.mail);
-    this.grupoDeControles.get('localidad')?.setValue(this.pedidoDetalle.localidad);
-    this.grupoDeControles.get('direccion')?.setValue(this.pedidoDetalle.direccion);
-    this.grupoDeControles.get('descripcion')?.setValue(this.pedidoDetalle.descripcion);
-    this.grupoDeControles.get('precio')?.setValue(this.pedidoDetalle.precio);
-    this.grupoDeControles.get('peso')?.setValue(this.pedidoDetalle.peso);
+    this.eventoPedido(this.pedidoDetalle);
+  }
+
+  eventoPedido(opcion : any){
+    this.grupoDeControles.get('cliente')?.setValue(opcion.cliente);
+    this.grupoDeControles.get('mail')?.setValue(opcion.mail);
+    this.grupoDeControles.get('localidad')?.setValue(opcion.localidad);
+    this.grupoDeControles.get('direccion')?.setValue(opcion.direccion);
+    this.grupoDeControles.get('descripcion')?.setValue(opcion.descripcion);
+    this.grupoDeControles.get('precio')?.setValue(opcion.precio);
+    this.grupoDeControles.get('peso')?.setValue(opcion.peso);
   }
 
   agregarPedido(){
-    this.firestore.subirPedido(this.grupoDeControles.value);
+    this.firestore.modificarPedido(this.grupoDeControles.value, this.pedidoDetalle.id);
     this.grupoDeControles.reset();
     this.utilidades.mostrarToastSuccess('Pedido agregado', 'Se ha pedido correctamente el repartidor');
   }
