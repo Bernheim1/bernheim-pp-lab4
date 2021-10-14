@@ -8,6 +8,7 @@
             <th>DESCRIPCION</th>
             <th>PRECIO</th>
             <th>PESO</th>
+            <th>ESTADO</th>
         </thead>
         <tbody>
         <tr *ngFor="let item of pedidosBD" (click)="this.setOutput(item)">
@@ -18,6 +19,7 @@
         <td>{{item.descripcion}}</td>
         <td>{{item.precio}}</td>
         <td>{{item.peso}}</td>
+        <td>{{item.estadoPedido}}</td>
         </tr>
         </tbody>
         </table>

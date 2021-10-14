@@ -1,1 +1,9 @@
-<p>cambiar-estado-pedido works!</p>
+<button class="btn btn-primary btn-block" (click)="this.cambiarEstado(0)">
+    Listo sin entregar
+  </button>
+  <button class="btn btn-primary btn-block" (click)="this.cambiarEstado(1)">
+    Entregado
+  </button>
+  <button class="btn btn-primary btn-block" (click)="this.cambiarEstado(2)">
+    Rechazado
+  </button>

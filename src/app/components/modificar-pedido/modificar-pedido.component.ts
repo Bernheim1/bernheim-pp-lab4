@@ -24,7 +24,6 @@ export class ModificarPedidoComponent implements OnInit {
       'descripcion': ['', [Validators.required, Validators.maxLength(100)]],
       'precio': ['', Validators.required],
       'peso': ['', [Validators.required, Validators.min(500), Validators.max(1000)]],
-      'estadoPedido': ['listo sin entregar']
     });
 
     console.log(this.pedidoDetalle)
@@ -45,7 +44,7 @@ export class ModificarPedidoComponent implements OnInit {
   agregarPedido(){
     this.firestore.modificarPedido(this.grupoDeControles.value, this.pedidoDetalle.id);
     this.grupoDeControles.reset();
-    this.utilidades.mostrarToastSuccess('Pedido agregado', 'Se ha pedido correctamente el repartidor');
+    this.utilidades.mostrarToastSuccess('Pedido modificado', 'Se ha modificado correctamente el pedido');
   }
 
 }

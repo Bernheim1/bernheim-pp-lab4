@@ -30,7 +30,7 @@ export class AltaPedidoComponent implements OnInit {
   agregarPedido(){
     this.firestore.subirPedido(this.grupoDeControles.value);
     this.grupoDeControles.reset();
-    this.utilidades.mostrarToastSuccess('Pedido agregado', 'Se ha pedido correctamente el repartidor');
+    this.utilidades.mostrarToastSuccess('Pedido agregado', 'Se ha agregado correctamente el pedido');
   }
 
 
