@@ -9,9 +9,9 @@ const routes: Routes = [
   {path: '', component: BienvenidoComponent},
   {path: 'login', component: LoginComponent},
   {path: 'repartidor', loadChildren: () => import('./modules/repartidor/repartidor.module').then(m => m.RepartidorModule), canActivate: [AuthGuard]},
-  {path: 'delivery', loadChildren: () => import('./modules/delivery/delivery.module').then(m => m.DeliveryModule)},
+  {path: 'delivery', loadChildren: () => import('./modules/delivery/delivery.module').then(m => m.DeliveryModule), canActivate: [AdminGuard]},
 ];
-//canActivate: [AdminGuard]
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -11,9 +11,12 @@ import { UtilidadesService } from 'src/app/services/utilidades.service';
 export class ModificarPedidoComponent implements OnInit {
 
   public grupoDeControles !: FormGroup;
-  @Input() pedidoDetalle : any;
+  @Input() set pedidoDetalle( value : any){
+    this.eventoPedido(value);
+  };
 
-  constructor(private fb : FormBuilder, private firestore : FirestoreService, private utilidades : UtilidadesService) { }
+  constructor(private fb : FormBuilder, private firestore : FirestoreService, private utilidades : UtilidadesService) { 
+  }
 
   ngOnInit(): void {
     this.grupoDeControles = this.fb.group({
@@ -28,7 +31,7 @@ export class ModificarPedidoComponent implements OnInit {
 
     console.log(this.pedidoDetalle)
 
-    this.eventoPedido(this.pedidoDetalle);
+
   }
 
   eventoPedido(opcion : any){
