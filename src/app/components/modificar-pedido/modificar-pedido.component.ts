@@ -11,9 +11,7 @@ import { UtilidadesService } from 'src/app/services/utilidades.service';
 export class ModificarPedidoComponent implements OnInit {
 
   public grupoDeControles !: FormGroup;
-  @Input() set pedidoDetalle( value : any){
-    this.eventoPedido(value);
-  };
+  @Input() pedidoDetalle : any;
 
   constructor(private fb : FormBuilder, private firestore : FirestoreService, private utilidades : UtilidadesService) { 
   }
@@ -31,7 +29,7 @@ export class ModificarPedidoComponent implements OnInit {
 
     console.log(this.pedidoDetalle)
 
-
+    this.eventoPedido(this.pedidoDetalle);
   }
 
   eventoPedido(opcion : any){
